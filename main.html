@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ptbr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="modal-lib-1_0.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="modal-lib-1_0.css">
+    <title>a</title>
+  </head>
+  <body>
+    <button type="button" name="button" onclick="$modal.openModal('<div class=&quot;mdlHeader&quot;> <h3>Informações do Chamado</h3> <div class=&quot;close&quot; onclick=&quot;$modal.closeModal()&quot;>X</div></div> <++template++>',['NomePRP','NomeValor'],['Categoria','Acesso'],&quot;<div class='item'><span>NomePRP</span><span>NomeValor</span></div>&quot;)">a</button>
+    <button type="button" name="button" onclick="$modal.openModal('<div class=&quot;mdlHeader&quot;> <h3>Informações do Chamado</h3> <div class=&quot;close&quot; onclick=&quot;$modal.closeModal(&amp;quot;#modalMaster.1&amp;quot;)&quot;>X</div></div> <++template++>',['NomePRP','NomeValor'],['Categoria','Acesso'],&quot;<div class='item'><span>NomePRP</span><span>NomeValor</span></div>&quot;,&quot;#modalMaster.1&quot;)">b</button>
+    <div id="modalMaster"></div>
+    <div id="modalMaster" class="1"></div>
+  </body>
+</html>
