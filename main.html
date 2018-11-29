@@ -8,9 +8,11 @@
     <title>a</title>
   </head>
   <body>
-    <button type="button" name="button" onclick="$modal.openModal('<div class=&quot;mdlHeader&quot;> <h3>Informações do Chamado</h3> <div class=&quot;close&quot; onclick=&quot;$modal.closeModal()&quot;>X</div></div> <++template++>',['NomePRP','NomeValor'],['Categoria','Acesso'],&quot;<div class='item'><span>NomePRP</span><span>NomeValor</span></div>&quot;)">a</button>
-    <button type="button" name="button" onclick="$modal.openModal('<div class=&quot;mdlHeader&quot;> <h3>Informações do Chamado</h3> <div class=&quot;close&quot; onclick=&quot;$modal.closeModal(&amp;quot;#modalMaster.1&amp;quot;)&quot;>X</div></div> <++template++>',['NomePRP','NomeValor'],['Categoria','Acesso'],&quot;<div class='item'><span>NomePRP</span><span>NomeValor</span></div>&quot;,&quot;#modalMaster.1&quot;)">b</button>
-    <div id="modalMaster"></div>
+    <script type="text/javascript"> // configurando MODAL
+      $md.templateMDL.push("<div class='item'><span>NomePRP</span><span>NomeValor</span></div>");
+      $md.contentMDL.push("<div class='mdlHeader'> <h3>Informações do Chamado</h3> <div class='close'; onclick='$md.closeModal(\"<TARGET>\")'>X</div></div><++template++>")
+    </script>
+    <button type="button" name="button" onclick="$md.openModal(['NomePRP','NomeValor'],['Categoria','Acesso'],0,0,'#modalMaster.1')">b</button>
     <div id="modalMaster" class="1"></div>
   </body>
 </html>
