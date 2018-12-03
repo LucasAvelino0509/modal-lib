@@ -9,10 +9,35 @@
   </head>
   <body>
     <script type="text/javascript"> // configurando MODAL
-      $md.templateMDL.push("<div class='item'><span>NomePRP</span><span>NomeValor</span></div>");
-      $md.contentMDL.push("<div class='mdlHeader'> <h3>Informações do Chamado</h3> <div class='close'; onclick='$md.closeModal(\"<TARGET>\")'>X</div></div><++template++>")
+      $(document).ready(function() {
+          $md.start($("#cabecarioModal"),$("#modal"));
+          $md.start($("#cabecarioModal"),$("#modal1"));
+          $md.start($("#cabecarioModal"),$("#modal2"));
+      });
     </script>
-    <button type="button" name="button" onclick="$md.openModal(['NomePRP','NomeValor'],['Categoria','Acesso'],0,0,'#modalMaster.1')">b</button>
-    <div id="modalMaster" class="1"></div>
+    <template id="modal" display="none">
+      <div class="item">
+        <span>NomePRP</span>
+        <span>NomeValor</span>
+        <button type="button" name="button" onclick="$md.openModal(['NomePRP','NomeValor'],['Categoria','Acesso'],1,1,'#2')">B</button>
+      </div>
+    </template>
+    <template id="modal1" display="none">
+      <div class="item"><button type="button" name="button" onclick="$md.openModal(['NomePRP','NomeValor'],['Categoria','Acesso'],1,2,'#3')">C</button></div>
+    </template>
+    <template id="modal2" display="none">
+      <div class="item"></div>
+    </template>
+    <template id="cabecarioModal" display="none">
+      <div class="mdlHeader">
+        <h3>Informações do Chamado</h3>
+        <div class="close" onclick="$md.closeModal('target__')">X</div>
+      </div>
+      template__
+    </template>
+    <button type="button" name="button" onclick="$md.openModal(['NomePRP','NomeValor'],['Categoria','Acesso'],0,0,'#1')">A</button>
+    <div id="1" class="modalMaster"></div>
+    <div id="2" class="modalMaster"></div>
+    <div id="3" class="modalMaster"></div>
   </body>
 </html>
